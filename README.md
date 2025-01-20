@@ -69,6 +69,7 @@ This will launch the app on http://localhost:3000.
 You can now interact with the frontend and authenticate with the backend API.
 
 State Management:
+
 For simple state management, React's useState and useEffect hooks are used.
 You can consider using Context API or Redux for more complex state management if needed.
 API Endpoints:
@@ -82,14 +83,18 @@ Headers: { "Authorization": "Bearer <JWT_TOKEN>" }
 Movie Management (Requires Authentication):
 GET /api/movies: Get all movies for the authenticated user.
 
+
 Headers: { "Authorization": "Bearer <JWT_TOKEN>" }
 POST /api/movies: Add a new movie to the collection.
+
 
 Body: { "title": "Movie Title", "year": 2025, "image": "image.jpg" }
 PUT /api/movies/:id: Update an existing movie's title, year, and image.
 
+
 Body: { "title": "Updated Title", "year": 2026 }
 DELETE /api/movies/:id: Delete a movie from the collection.
+
 
 Image Upload:
 POST /api/movies/upload: Upload a movie image using multer.
