@@ -59,3 +59,21 @@ exports.updateMovie = async (req, res) => {
     res.status(500).json({ message: err.message });
   }
 };
+
+exports.deleteMovie= async (req,res)=>{
+  const id= req.params.id;
+ 
+  try{
+    const foundMovie=await  movieModel.findByIdAndDelete({_id:id})
+    if(!foundMovie){
+      res.json({data:'movie not found',eror:404})
+    }
+    else{
+      res.json({data:foundMovie, delete:'successfully',status:200,})
+    }
+  }
+  catch(error){
+    res.json({data:error.message,err:'this is error'})
+  }
+  
+}
