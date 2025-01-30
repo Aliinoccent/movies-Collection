@@ -11,7 +11,7 @@ exports.addMovie = async (req, res) => {
     } else {
       image=req.file? req.file.path:null;
       if(!image){
-        res.json({data:'image is not found ',path:'null'})
+        res.json({data:'image is not founds ',path:'null'})
       }
       else{
         console.log("movie add call", title, year,image);
